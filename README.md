@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## How to Run code
+npm install -g @angular/cli [If cli is not installed else skip].
+On Project path use command npm install to install all the dependencies.
+On failure to install dependencies use npm install --force so it can take compatiable dependencies.
+Run ng serve --open for running project on localhost:4200.
+To run Json server use command npm run json-server [important to perform http calls].
