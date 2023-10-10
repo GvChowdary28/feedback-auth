@@ -1,0 +1,85 @@
+
+<div class="container login-page" id="id">
+    <div class="card login-card">
+      <div class="card-header">
+        <h2>Login</h2>
+        <button class=""
+                [tooltip]="tooltipData"
+                placement="right">
+        ?
+      </button>
+        <ng-template #tooltipData>
+            <div>
+                <span>Use below Credentials</span>
+                <ol>
+                    <li>username: admin  password: admin123</li>
+                    <li>username: user  password: user123</li>
+                </ol>
+            </div>
+        </ng-template>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="row">
+                <div class="form-group col">
+                    <label>Username</label>
+                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginformValue.username.errors }"/>
+                    <div *ngIf="submitted && loginformValue.username.errors" class="invalid-feedback">
+                        <div *ngIf="loginformValue.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginformValue.password.errors }"/>
+                    <div *ngIf="submitted && loginformValue.password.errors" class="invalid-feedback">
+                        <div *ngIf="loginformValue.password.errors.required">Passwrod is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <button class="login-btn" type="submit">Login</button>
+                </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<!-- <body>
+    
+    <div class="main">
+        <form class="main__form">     
+
+            <div class="main__form__inputs">
+                <h3>LOGIN</h3>
+                <div>
+                    <input type="email" placeholder="  EMAIL" class="form-control">
+                    <span id="span1"></span>
+                </div>
+                <div>
+                    <input type="password" placeholder="  PASSWORD" required id="input2">
+                    <i class="fa-solid fa-eye" id="eye-icon"></i>
+                    <span id="span2"></span>
+                </div>
+                <a href="#">FORGOT YOUR PASSWORD</a>
+            </div>
+
+            <div class="main__form__buttons">
+                <a href="" class="main__form__buttons__btn1 button" id="register">
+                    <span>REGISTER</span>
+                </a>
+                <button class="main__form__buttons__btn2 button">
+                    <span>SIGN IN</span>
+                </button>
+            </div>
+        
+        </form>         
+    </div>
+    
+
+
+</body> -->

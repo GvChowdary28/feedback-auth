@@ -1,0 +1,57 @@
+<!-- <div class="comment-section">
+	<h1 class="comment-reply-title">Write your comment!</h1>
+	<form id="commentform" class="comment-form">
+		
+	</form>
+</div> -->
+<div class="container">
+    <div class="comment-section ">
+        <div>
+            <h1 class="comment-reply-title">Write your comment!</h1>
+        </div>
+        <div>
+            <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Name</label>
+                        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && feedbackFromValue.name.errors }" />
+                        <div *ngIf="submitted && feedbackFromValue.name.errors" class="invalid-feedback">
+                            <div *ngIf="feedbackFromValue.name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <label>Email</label>
+                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && feedbackFromValue.email.errors }"/>
+                        <div *ngIf="submitted && feedbackFromValue.email.errors" class="invalid-feedback">
+                            <div *ngIf="feedbackFromValue.email.errors.required">Email is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label>Company</label>
+                        <input type="text" formControlName="company" class="form-control" [ngClass]="{ 'is-invalid': submitted && feedbackFromValue.company.errors }"/>
+                        <div *ngIf="submitted && feedbackFromValue.company.errors" class="invalid-feedback">
+                            <div *ngIf="feedbackFromValue.company.errors.required">Email is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label>Comments</label>
+                        <textarea type="text" formControlName="comments" class="form-control" [ngClass]="{ 'is-invalid': submitted && feedbackFromValue.comments.errors }"></textarea>
+                        <div *ngIf="submitted && feedbackFromValue.comments.errors" class="invalid-feedback">
+                            <div *ngIf="feedbackFromValue.comments.errors.required">Email is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col text-center">
+                        <button class="comment-btn" type="submit">Submit Feedback</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>

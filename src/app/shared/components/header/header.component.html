@@ -1,0 +1,23 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" routerLink="/home">British Telecom</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse nav-link-data" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <div class="dynamice-nav" *ngIf="!(isAuthenticated$ | async)">
+                <a class="nav-item nav-link" routerLinkActive="active" routerLink="/feedback">Feedback</a>
+                <a class="nav-item nav-link" routerLinkActive="active" routerLink="/login">Login</a>
+                <!-- <a class="nav-item nav-link" (click)="onLogout()">Logout</a> -->
+            </div>
+            <div class="dynamice-nav"   *ngIf="(isAuthenticated$ | async) && (currentUser.role === 'admin' || currentUser.role == 'user')">
+                <a class="nav-item nav-link" routerLinkActive="active" (click)="onLogout()">Logout</a>
+                <a class="user-role"><span>{{currentUser.role | uppercase}}</span></a>
+                
+            </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- <app-logout></app-logout> -->

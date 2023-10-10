@@ -1,0 +1,30 @@
+<div class="box-wrap" *ngIf="showData">
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>sr no.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of feedbackData">
+                    <td>{{data?.id}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.company}}</td>
+                    <td>{{data.comments}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+  
+</div>
+<div *ngIf="!showData" class="container mt-5">
+    <h1>Welcome to Dashboard</h1>
+    <h6>You are not autherised to access dashboard content</h6>
+</div>
