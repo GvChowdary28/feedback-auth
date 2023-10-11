@@ -39,7 +39,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
-      progressBar: true
+      progressBar: true,
     }),
   ],
   providers: [],
