@@ -1,7 +1,7 @@
 import { Role } from "./role"
 
 export interface User{
-    if:number
+    id:number
     username: string
     role: Role
 }
